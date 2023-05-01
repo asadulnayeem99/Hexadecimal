@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        transition: 2s;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      body {
+        background-color: black;
+      }
+      .container {
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        width: 30rem;
+        /* height: 10rem; */
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        display: block;
+        width: 100%;
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        /* margin-top: 5px; */
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h1 id="color-code">#fff</h1>
+        <button id="btn">Click</button>
+        <button class="copy-btn" id="btn2">Copy</button>
+      </div>
+    </div>
+    <script>
+      let randomCode = "";
+      const getColor = () => {
+        const randomNumber = Math.floor(Math.random() * 16777215);
+        const randomCode = "#" + randomNumber.toString(16);
+        console.log(randomNumber, randomCode);
+        const header = document.getElementById("color-code");
+        document.body.style.backgroundColor = randomCode;
+        header.innerHTML = randomCode;
+      };
+      document.getElementById("btn").addEventListener("click", getColor);
+    </script>
+  </body>
+</html>
